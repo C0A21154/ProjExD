@@ -52,3 +52,8 @@ if ans_num == delete_num:
         print("不正解です。また挑戦してください")
         fi = datetime.datetime.now()
         print(f"かかった時間：{(fi - st).seconds}秒")
+
+else :
+    print("不正解です。また挑戦してください")
+    fi = datetime.datetime.now()
+    print(f"かかった時間：{(fi - st).seconds}秒")
