@@ -1,3 +1,4 @@
+import datetime
 from random import randint
 
 mondai = ["1+0は？", "2*3は？", "9-5は？"]
@@ -7,6 +8,9 @@ kotae = [["1","１","Ⅰ","いち","イチ","一"],
 ["4","４","Ⅳ","よん","ヨン","四"]]
 
 bangou = randint(0,2)
+
+start_time = 0
+fihish_time = 0
 
 def shutudai(n):
     print(mondai[bangou])
@@ -24,4 +28,7 @@ def kaito(n):
     return 0
 
 shutudai(bangou)
+start_time = datetime.datetime.now()
 kaito(bangou)
+fihish_time = datetime.datetime.now()
+print(f"かかった時間：{(fihish_time - start_time).seconds}秒")
