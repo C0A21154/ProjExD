@@ -1,5 +1,4 @@
 from random import randint
-import re
 
 mondai = ["1+1は？", "2*3は？", "9-5は？"]
 
