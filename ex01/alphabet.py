@@ -22,7 +22,7 @@ while len(before_alphabet) < origin_num:
 after_alphabet = before_alphabet.copy()
 
 for i in range(delete_num):
-    rnum = randint(0, (origin_num-i))
+    rnum = randint(0, len(after_alphabet))
     p = after_alphabet.pop(rnum)
     delete_alphabet.append(p)
 
