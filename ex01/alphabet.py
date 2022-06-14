@@ -3,6 +3,7 @@ import datetime
 
 origin_num = 10
 delete_num = 2
+kurikaesi = 0
 
 while True:
     before_alphabet = []
@@ -46,15 +47,18 @@ while True:
                 check +=1
 
         if check == delete_num:
-            print("正解です。おめでとうございます！")
+            kurikaesi +=1
+            print(f"正解です。おめでとうございます！\n{kurikaesi}回挑戦しました。")
             fi = datetime.datetime.now()
             print(f"かかった時間：{(fi - st).seconds}秒")
             break 
 
         else :
             print("不正解です。また挑戦してください")
+            kurikaesi +=1
             continue
 
     else :
         print("不正解です。また挑戦してください")
+        kurikaesi += 1
         continue
