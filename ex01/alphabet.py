@@ -1,4 +1,5 @@
 from random import randint
+import datetime
 
 origin_num = 10
 delete_num = 2
@@ -29,6 +30,7 @@ print("対象文字")
 print(before_alphabet)
 print("欠損文字")
 print(after_alphabet)
+st = datetime.datetime.now()
 
 ans_num = int(input("欠損文字はいくつあるでしょうか？："))
 
@@ -43,7 +45,10 @@ if ans_num == delete_num:
 
     if check == delete_num:
         print("正解です。おめでとうございます！")
+        fi = datetime.datetime.now()
+        print(f"かかった時間：{(fi - st).seconds}秒")
 
     else :
         print("不正解です。また挑戦してください")
-    
+        fi = datetime.datetime.now()
+        print(f"かかった時間：{(fi - st).seconds}秒")
