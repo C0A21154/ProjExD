@@ -12,6 +12,16 @@ def button_click(event):
         txt = "*"
     elif (txt == "÷"):
         txt = "/"
+    elif (txt == "C"):
+        entry.delete(-1)
+        return 0
+    elif (txt == "AC"):
+        entry.delete(0, tk.END)
+        return 0
+    elif (txt == "%"):
+        ans = (eval(entry.get())) * 100
+        entry.delete(0, tk.END)
+        entry.insert(tk.END, f"{ans}")
 
     entry.insert(tk.END, f"{txt}")
 
@@ -22,11 +32,11 @@ def enter():
 
 dentaku = tk.Tk()
 dentaku.title("電卓")
-dentaku.geometry("400x500")
+dentaku.geometry("392x460")
 enzansi = ["÷", "×", "-", "+"]
-option = [" ","%", "c", "ac"]
+option = [" ","%", "C", "AC"]
 
-entry = tk.Entry(dentaku, width = 15, justify = 'right', font = ("Times New Roman", 40))
+entry = tk.Entry(dentaku, width = 15, justify = 'right', font = ("Times New Roman", 35))
 entry.grid(columnspan = 10)
 
 for i in range(4):
