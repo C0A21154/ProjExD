@@ -40,12 +40,11 @@ entry = tk.Entry(dentaku, width = 15, justify = 'right', font = ("Times New Roma
 entry.grid(columnspan = 10)
 
 for c,i in enumerate(["","%","C","AC",7,8,9,"÷",4,5,6,"×",1,2,3,"-",".",0,"=","+"]):
-        #ボタンの設定
         button=tk.Button(dentaku,
                       text=f"{i}",
                       width=4,
                       height=1,
-                      font=("Times New Roman",30))
+                      font=("Times New Roman",3))
         button.bind("<1>",button_click)
         x=c%4+1
         y=c//4+1
