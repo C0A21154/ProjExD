@@ -16,16 +16,17 @@ def key_up(event):
 def main_proc():
     global mx, my, cx, cy
 
-    if key == "Up":
-        if makemaze[my-1][mx] == 0:
-            my -= 1
-    elif key == "Down":
-        if makemaze[my+1][mx] == 0:
+    if key == "Up" and makemaze[my-1][mx] == 0:
+        my -= 1
+
+    elif key == "Down" and makemaze[my+1][mx] == 0:
             my += 1
+
     elif key == "Left":
         canvas.itemconfigure(ImageID, image = toriL)
         if makemaze[my][mx-1] == 0:
             mx -= 1
+            
     elif key == "Right":
         canvas.itemconfigure(ImageID, image = toriR)
         if makemaze[my][mx+1] == 0:
@@ -39,7 +40,7 @@ def main_proc():
         tkm.showinfo("ゴール","ゴールおめでとう!!")
         exit()
 
-    maze.after(65, main_proc)
+    maze.after(100, main_proc)
 
 
 if __name__ == "__main__":
