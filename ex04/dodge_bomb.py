@@ -8,8 +8,8 @@ import datetime
 
 def main():
     st = datetime.datetime.now()
-    vx1, vy1 = 1, 1
-    vx2, vy2 = -1, 1
+    vx1, vy1 = +1, +1
+    vx2, vy2 = -1, +1
     time = 0
     bomb_list = []
     
@@ -52,21 +52,21 @@ def main():
         key_type = pg.key.get_pressed()
         if key_type[pg.K_UP] == True:
             bdimg_rct.centery -=1
-        elif key_type[pg.K_DOWN] == True:
+        if key_type[pg.K_DOWN] == True:
             bdimg_rct.centery +=1
-        elif key_type[pg.K_LEFT] == True:
+        if key_type[pg.K_LEFT] == True:
             bdimg_rct.centerx -=1
-        elif key_type[pg.K_RIGHT] == True:
+        if key_type[pg.K_RIGHT] == True:
             bdimg_rct.centerx +=1
 
         if bound(bdimg_rct, screen_rct) != (1, 1):
             if key_type[pg.K_UP] == True:
                 bdimg_rct.centery +=1
-            elif key_type[pg.K_DOWN] == True:
+            if key_type[pg.K_DOWN] == True:
                 bdimg_rct.centery -=1
-            elif key_type[pg.K_LEFT] == True:
+            if key_type[pg.K_LEFT] == True:
                 bdimg_rct.centerx +=1
-            elif key_type[pg.K_RIGHT] == True:
+            if key_type[pg.K_RIGHT] == True:
                 bdimg_rct.centerx -=1
 
         screen_sfc.blit(bdimg_sfc, bdimg_rct)
