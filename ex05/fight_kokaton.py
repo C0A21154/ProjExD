@@ -25,9 +25,6 @@ class Bird:
         self.rct = self.sfc.get_rect()          # Rect
         self.rct.center = xy
 
-    #def atk(self):
-        #return Beam(self.rct, pg.mouse.get_pos())
-
 
     def blit(self, scr: Screen):
         scr.sfc.blit(self.sfc, self.rct)
