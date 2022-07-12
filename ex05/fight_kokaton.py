@@ -140,6 +140,9 @@ def main():
         em.update(scr)
 
         if bm:
+            if em.rct.colliderect(bm.rct):
+                tkm.showinfo("GameClear", f"おめでとう！！")
+                return
             bm.update(scr)
         if kkt.rct.colliderect(bkb.rct):
             tkm.showinfo("GameOver", f"残念また遊んでね！")
@@ -147,9 +150,6 @@ def main():
         if kkt.rct.colliderect(em.rct):
             tkm.showinfo("GameOver", f"残念また遊んでね！")
             return
-        """if em.rct.colliderect(bm.rct):
-            tkm.showinfo("GameClear", f"おめでとう！！")
-            return"""
 
         pg.display.update()
         clock.tick(1000)
