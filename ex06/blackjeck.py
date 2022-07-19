@@ -133,70 +133,70 @@ def main():
     std = Stand_s("fig/stand.png", 0.3, (1400,600))
     bak = Back("fig/back.png", 0.8, (900,200))
     
-    while True:
-        m_hand = Hand()
-        d_hand = Hand()
-        m_num = Return_sum(m_hand)
-        d_num = Return_sum(d_hand)
-        ct = 1
-        m_card = []
-        d_card = []
+    m_hand = Hand()
+    d_hand = Hand()
+    m_num = Return_sum(m_hand)
+    d_num = Return_sum(d_hand)
+    ct = 1
+    m_card = []
+    d_card = []
 
-        for i in range(4):
-            for j in range(13):
-                if (m_hand[i][j] == True) and ct == 1:
-                    a = i
-                    if i == 1:
-                        a = 13
-                    elif i == 2:
-                        a = 26
-                    elif i == 3:
-                        a = 39
-                    n = a + j
-                    m_card.append(n)
-                    ct += 1
-                if (m_hand[i][j] == True) and ct == 2:
-                    a = i
-                    if i == 1:
-                        a = 13
-                    elif i == 2:
-                        a = 26
-                    elif i == 3:
-                        a = 39
-                    n = a + j
-                    m_card.append(n)
-                    break
-        mc1 = Card(f"fig/{m_card[0]}.png", 0.3, (600, 500))
-        mc2 = Card(f"fig/{m_card[1]}.png", 0.3, (900, 500))
+    for i in range(4):
+        for j in range(13):
+            if (m_hand[i][j] == True) and ct == 1:
+                a = i
+                if i == 1:
+                    a = 13
+                elif i == 2:
+                    a = 26
+                elif i == 3:
+                    a = 39
+                n = a + j
+                m_card.append(n)
+                ct += 1
+            if (m_hand[i][j] == True) and ct == 2:
+                a = i
+                if i == 1:
+                    a = 13
+                elif i == 2:
+                    a = 26
+                elif i == 3:
+                    a = 39
+                n = a + j
+                m_card.append(n)
+                break
+    mc1 = Card(f"fig/{m_card[0]}.png", 0.3, (600, 500))
+    mc2 = Card(f"fig/{m_card[1]}.png", 0.3, (900, 500))
 
-        for i in range(4):
-            for j in range(13):
-                if (d_hand[i][j] == True) and ct == 1:
-                    a = i
-                    if i == 1:
-                        a = 13
-                    elif i == 2:
-                        a = 26
-                    elif i == 3:
-                        a = 39
-                    n = a + j
-                    d_card.append(n)
-                    ct += 1
-                if (m_hand[i][j] == True) and ct == 2:
-                    a = i
-                    if i == 1:
-                        a = 13
-                    elif i == 2:
-                        a = 26
-                    elif i == 3:
-                        a = 39
-                    n = a + j
-                    d_card.append(n)
-                    break
+    for i in range(4):
+        for j in range(13):
+            if (d_hand[i][j] == True) and ct == 1:
+                a = i
+                if i == 1:
+                    a = 13
+                elif i == 2:
+                    a = 26
+                elif i == 3:
+                    a = 39
+                n = a + j
+                d_card.append(n)
+                ct += 1
+            if (m_hand[i][j] == True) and ct == 2:
+                a = i
+                if i == 1:
+                    a = 13
+                elif i == 2:
+                    a = 26
+                elif i == 3:
+                    a = 39
+                n = a + j
+                d_card.append(n)
+                break
         
-        dc1 = Card(f"fig/{d_card[0]}.png", 0.3, (600, 200))
-        dc2 = Card(f"fig/{d_card[1]}.png", 0.3, (900, 200))
+    dc1 = Card(f"fig/{d_card[0]}.png", 0.3, (600, 200))
+    dc2 = Card(f"fig/{d_card[1]}.png", 0.3, (900, 200))
 
+    while True:
         scr.blit()
         hit_s.blit(scr)
         std.blit(scr)
